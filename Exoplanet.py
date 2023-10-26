@@ -12,4 +12,4 @@ class Exoplanet:
         self.e_mass = e_mass
         self.surface_gravity = surface_gravity
 
-    def
+    
