@@ -1,0 +1,5 @@
+@import 'main.css';
+
+.background-image{
+    background-image: url('/static/images/aboutme.jpeg');
+}

@@ -1,0 +1,23 @@
+<section class="search-section"> <!-- CLASSES: Used to apply styles to specific HTML elements. -->
+    <form action="{{ url_for('search') }}" method="GET"> <!-- Form allows users to SEARCH for exoplanets-->
+        <input type="text" name="query" placeholder="Search for exoplanets..."> <!-- Users enter the search query-->
+        <button type="submit">Search</button> <!-- Submits the search form -->
+        
+    </form>
+</section>
+
+<section class="results-section"> 
+    {% if exoplanets %} <!-- If there are exoplanets in the result, -->
+        <ul> <!-- u1 and li display list of exoplanets -->
+            {% for exoplanet in exoplanets %}
+                <li>
+                    <a href="{{ url_for('exoplanet_detail', id=exoplanet.id) }}"> <!-- Links to the detailed page for each exoplanet-->
+                        {{ exoplanet.name }} <!-- Displays the name of each exoplanet -->
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %} <!-- Handles the case when no results are found -->
+        <p>No results found.</p> <!-- Displays message indicating that there were no results -->
+    {% endif %}
+</section>

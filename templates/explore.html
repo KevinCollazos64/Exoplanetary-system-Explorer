@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Explore Exoplanets{% endblock %}
+
+{% block stylesheet %}/static/styles/explore.css{% endblock %}
+
+{% block page_header %}Explore{% endblock %}
+
+{% block content %}
+    <h2>Explore Exoplanets</h2>
+    <div class="exoplanet-list">
+        {% for exoplanet in Exoplanets %}
+            <div class="exoplanet">
+                <h3>{{ exoplanet.get('name', 'Unknown') }}</h3>
+                <p>Discovery Method: {{ exoplanet.get('discovery_method', 'Unknown') }}</p>
+                <p>Orbital Period: {{ exoplanet.get('orbital_period', 'Unknown') }} days</p>
+
+                {% if exoplanet.get('image_url') %}
+                    <img src="{{ exoplanet['image_url'] }}" alt="{{ exoplanet['name'] }} Image">
+                {% endif %}
+            </div>
+        {% endfor %}   
+    </div>
+{% endblock %}

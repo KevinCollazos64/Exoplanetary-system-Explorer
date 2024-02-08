@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Meta specifies character set and viewport settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}"> <!-- Links to main CSS file for styling -->
+    <title>{{ exoplanet.name }} - Exoplanet Details</title> <!-- Title to be displayed after user clicks a result post search -->
+</head>
+<body>
+    <header>
+        <h1>{{ exoplanet.name }}</h1> <!-- Body Title to be displayed -->
+        <a href="{{ url_for('index') }}">Back to Search</a> <!-- Creates URL to go back to index should user wanna return to search -->
+    </header>
+    
+    <main>
+        <section class="details-section"> <!-- Details used as a hook for styling. CSS class used to apply styles to specific HTML elements -->
+            <p><strong>Discovery Method:</strong> {{ exoplanet.discovery_method }}</p> <!-- p displays message with strong font, {{ displays info inside }} -->
+            <p><strong>Year of Discovery:</strong> {{ exoplanet.discovery_year }}</p>
+            <p><strong>Orbital Period:</strong> {{ exoplanet.orbital_period }} days</p>
+            <!-- Add more details as needed -->
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Search Exoplanets{% endblock %}
+
+{% block stylesheet %}/static/styles/search.css{% endblock %}
+
+{% block page_header %}Search{% endblock %}
+
+{% block content %}<p>Enter criteria to search for Exoplanets.</p>
+    <div class="search-section">
+        <form action="{{ url_for('search_results') }}" method="GET">
+            <label for="planet-name">Planet Name:</label>
+            <input type="text" id="planet-name" name="planet_name" placeholder="Enter planet name">
+
+            <label for="discovery-method">Discovery Method:</label>
+            <input type="text" id="discovery-method"  name="discovery_method" placeholder="Enter discovery method">
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+{% endblock %}

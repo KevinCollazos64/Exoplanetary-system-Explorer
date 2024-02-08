@@ -1,4 +1,3 @@
-import requests
 # specify columns to return (select+pl_name,pl_masse,ra,dec+from+ps) for ex all spaces replaced with +
 # more constraints with where
 # examples on usingTAP website
@@ -20,10 +19,10 @@ import requests
 # what is the filter you wanna have for this program? how could we allow user to have a filter?
 
 
-url = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name+pl_rade+disc_year+pl_masse+st_logg+from+ps+where+pl_rade+<+2&format=json"
-response = requests.get(url)
-if response.status_code == 200:
-    print('ok')
-    data = response.json()
-    print(data[0])
+# url = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name+pl_rade+disc_year+pl_masse+st_logg+from+ps+where+pl_rade+<+2&format=json"
+# response = requests.get(url)
+# if response.status_code == 200:
+#     print('ok')
+#     data = response.json()
+#     print(data[0])
 

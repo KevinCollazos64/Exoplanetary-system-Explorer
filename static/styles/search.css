@@ -1,0 +1,37 @@
+@import 'main.css';
+
+.background-image{
+    background-image: url('/static/images/search.jpeg');
+}
+
+.search-section {
+    margin-bottom:1rem;
+}
+
+form {
+    display:flex;
+    flex-direction:column;
+    max-width: 300px;
+    margin:auto;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #451f81;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #592ba3;
+}

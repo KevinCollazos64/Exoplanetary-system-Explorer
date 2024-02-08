@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head> <!-- HEAD section -->
+        <meta charset="utf-8" /> <!-- META pecifies character set and viewport settings-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Page Title{% endblock %}</title> <!-- Sets title of the page to be displayed -->
+        <link rel="stylesheet" href="{% block stylesheet %}{% endblock %}"> <!-- Links to main css file for STYLING, main contains basic styling for layout, including header, form, and results-->
+    </head>
+
+    <body> <!-- BODY section -->
+        <div class="background-image"></div>
+        <header>
+            <h1>{% block page_header %}{% endblock %}</h1>
+            <nav> 
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="menu-contents">
+                    <a href="home">Home</a>
+                    <a href="search">Search</a>
+                    <a href="explore">Explore</a>
+                    <a href="aboutme">About Me</a>
+                    <a href="myfavexopl">My Favorite Exoplanets</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <script src="static/js/main.js"></script>
+    </body>
+</html> 
+
+<!-- {{ '{{...}}' }} OUPUTS the VALUE of the expression INSIDE  -->
+<!-- {{ '{%...%}' }} EXECUTES CONTROL FLOW or other LOGIC INSIDE --> 
+<!-- 'url_for('...')' Generates URL for the specified FLASK routes. Ensures FORM SUBMISSION and LINKS are directed to CORRECT ENDPOINTS --> 
+<!-- link links to the main css for styling -->
+<!-- CSS classes "class=" used to apply styles to specific HTML elements (search/results sections are used as hooks for styling) -->
